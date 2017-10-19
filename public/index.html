@@ -1,0 +1,20 @@
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <form id="myForm" method="POST">
+        <input type="text" id="fname" name= "fname" placeholder="First Name" />
+        <input type="text" id="lname" name="lname" placeholder="Last Name" />
+        <input type="text" id="age" name="age" placeholder="Age" />
+        <input type="button" onclick="addUser()" value="New User" />
+        <input type="button" onclick="clearForm()" value="Cancel">
+    </form>
+    <button onclick="getAllUsers()">Get All Users</button>
+    <div id="userDetails"></div>
+    <script src="./index.js"></script>
+</body>
+
+</html>

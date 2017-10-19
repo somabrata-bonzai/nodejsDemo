@@ -8,8 +8,8 @@ var router = require("./src/router");
 
 var app = express();
 
-app.listen(8080, function() {
-    console.log("Application started");
+app.listen(3030, function() {
+    console.log("Application started at 3030");
 });
 
 app.use(express.static(path.join(__dirname, "public")));

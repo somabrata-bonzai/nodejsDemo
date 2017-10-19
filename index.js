@@ -8,8 +8,8 @@ var router = require("./src/router");
 
 var app = express();
 
-app.listen(3030, function() {
-    console.log("Application started at 3030");
+app.listen((process.env.PORT || 3030), function() {
+    console.log("Application started at " + app.get("port"));
 });
 
 app.use(express.static(path.join(__dirname, "public")));

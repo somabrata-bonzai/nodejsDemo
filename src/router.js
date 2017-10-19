@@ -1,4 +1,4 @@
-var service = require("./service/mysql");
+var service = require("./service");
 var geocodeService = require("./service/geocode");
 var XLSX = require("node-xlsx");
 

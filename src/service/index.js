@@ -7,13 +7,13 @@ module.exports = (function () {
     }    
     
     return {
-        addUser: function(model) {
+        addUser: function(model, callback) {
             var id = generateNewId();
             users[id] = model;
-            return users[id];
+            callback(null, users[id]);
         },
-        getUsers: function() {
-            return users;
+        getUsers: function(callback) {
+            callback(null, users);
         },
         getUser: function(id) {
             return users[id];

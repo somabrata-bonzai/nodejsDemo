@@ -8,7 +8,7 @@ var router = require("./src/router");
 
 var app = express();
 
-app.listen(3030, function() {
+app.listen(8080, function() {
     console.log("Application started");
 });
 

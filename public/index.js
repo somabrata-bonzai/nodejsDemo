@@ -18,3 +18,22 @@ function getAllUsers() {
         }
     });
 }
+
+function uploadFile() {
+    $.ajax({
+        url:'/map/uplaodFile',
+        type: 'post',
+        enctype: 'multipart/form-data',
+        processData: false,  // Important!
+        contentType: false,
+        cache: false,
+        data: new FormData($('#geoLocation')[0]),
+        success: function(data) {
+            alert("sucess");
+            $("#userDetails")[0].append(JSON.stringify(data.result));
+        },
+        error: function (error) {
+            alert("error");
+        }
+    });
+}

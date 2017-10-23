@@ -19,19 +19,20 @@ module.exports = function(app) {
     });
 
     app.post("/map/uplaodFile", function(req, res) {
-        console.log(req.files.excel.data);
+        var key = req.body.key;
         // Or var xlsx = require('node-xlsx').default;
 
         // Parse a buffer
         const workSheetsFromBuffer = XLSX.parse(req.files.excel.data);
         var data = workSheetsFromBuffer[0].data;
+        console.log(data);
         var resObj = [];
         data.map(function(addr, index) {
             if (index === 0) {
                 return;
             }
             var address = addr[0] + addr[1] + addr[2] + addr[3];
-            geocodeService.getLatLng({ address: address }, function(err, results) {
+            geocodeService.getLatLng({ address: address, key: key }, function(err, results) {
                 resObj.push(err ? null : results[0]);
                 if (resObj.length === data.length - 1) {
                     res.send({

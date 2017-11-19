@@ -1,0 +1,33 @@
+<html>
+    
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.0.0/cjs/react.development.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    
+    <body>
+        <div id="app"></div>
+        <form id="myForm" method="POST">
+            <input type="text" id="fname" name="fname" placeholder="First Name" />
+            <input type="text" id="lname" name="lname" placeholder="Last Name" />
+            <input type="text" id="age" name="age" placeholder="Age" />
+            <input type="button" onclick="addUser()" value="New User" />
+            <input type="button" onclick="clearForm()" value="Cancel">
+        </form>
+        <button onclick="getAllUsers()">Get All Users</button>
+        <div id="userDetails"></div>
+        <form id="geoLocation" method="POST" enctype="multipart/form-data">
+            <input type="file" id="excel" name="excel" placeholder="Upload File" />
+            <input type="button" onclick="uploadFile()" value="Upload File" />
+        </form>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.0.0/umd/react-dom.development.js"></script>
+        <script>
+            var app = ReactDOM.render(
+                <h1>hello world</h1>,
+                document.getElementById('app')
+            );
+        </script>
+        <script src="./index.js"></script>
+    </body>
+    
+    </html>
